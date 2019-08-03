@@ -13,7 +13,7 @@ public class SorterTest {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		
-		Sorter<Integer> sorter = SorterTypeEnum.getSorter(SorterTypeEnum.HEAP_SORT.getValue());
+		Sorter<Integer> sorter = SorterTypeEnum.getSorter(SorterTypeEnum.MERGE_SORT.getValue());
 		sorter.sort(input);
 		Arrays.asList(input).stream().forEach(System.out::println);
 		

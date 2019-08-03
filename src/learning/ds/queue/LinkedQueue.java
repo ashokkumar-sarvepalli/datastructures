@@ -22,7 +22,6 @@ public class LinkedQueue<T> implements Queue<T> {
 	 */
 	@Override
 	public void enque(T element) {
-		
 		Node<T> temp = new Node<T>(element,null);
 		size = size+1;
 		if(rear==null) {
