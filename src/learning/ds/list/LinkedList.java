@@ -13,6 +13,10 @@ public class LinkedList<T> implements List<T> {
 
 	
 
+	/*
+	 * This method is responsible for adding element in to a list.
+	 * It adds at the end of the list
+	 */
 	@Override
 	public void add(T element) {
 		Node<T> temp = new Node<T>(element,null);
@@ -30,6 +34,9 @@ public class LinkedList<T> implements List<T> {
 	}
 	
 	
+	/*
+	 * This method is responsible for adding element at the beginning of the list
+	 */
 	@Override
 	public void addAtFirst(T element) {
 		Node<T> temp = new Node<T>(element,null);
@@ -46,7 +53,10 @@ public class LinkedList<T> implements List<T> {
 		
 	}
 	
-	
+	/*
+	 * This method is responsible for adding element at a particular index of the list
+	 * If the index is out of bound it will throw exception
+	 */
 	@Override
 	public void add(int index, T element) {
 		
@@ -91,7 +101,9 @@ public class LinkedList<T> implements List<T> {
 		
 	}
 
-
+	/*
+	 * This method removes the particular element in the list
+	 */
 	@Override
 	public boolean remove(T element) {
 		
@@ -121,6 +133,9 @@ public class LinkedList<T> implements List<T> {
 		
 	}
 	
+	/*
+	 * This method removes the element in the beginning of the list
+	 */
 	public boolean removeAtBeginning() {
 		
 		if(head==null) {
@@ -135,6 +150,10 @@ public class LinkedList<T> implements List<T> {
 	}
 
 	
+	/*
+	 * This method is responsible for removing element in to a list.
+	 * It removes based on a index being passed
+	 */
 	@Override
 	public boolean remove(int index) {
 
@@ -168,6 +187,9 @@ public class LinkedList<T> implements List<T> {
 		return false;
 	}
 
+	/*
+	 * This method gets a element in a list based on the index being passed
+	 */
 	@Override
 	public T get(int index) {
 		if(index>=size || index<0) {
@@ -189,11 +211,18 @@ public class LinkedList<T> implements List<T> {
 		return null;
 	}
 
+	/*
+	 * returns the number of elements in the list
+	 * 
+	 */
 	@Override
 	public int size() {
 		return size;
 	}
 
+	/*
+	 * This method searches an element in the list
+	 */
 	@Override
 	public boolean contains(T element) {
 		Node<T> temp = head;
@@ -207,6 +236,11 @@ public class LinkedList<T> implements List<T> {
 		return false;
 	}
 
+	
+	/*
+	 * This method completely reverses the linked list
+	 * 
+	 */
 	@Override
 	public void reverse() {
 		
@@ -294,12 +328,20 @@ public class LinkedList<T> implements List<T> {
 	}
 
 	
-	
+	/*
+	 * Iterator to iterate the linked list
+	 */
 	@Override
 	public Iterator<T> iterator() {
 		return new ListIterator<T>();
 	}
 	
+	
+	/*
+	 * This inner class is responsible for iterating the linked list
+	 * while iteration no other thread should do the change 
+	 * So change count is being checked.
+	 */
 	@SuppressWarnings({"hiding", "unchecked"})
 	public class ListIterator<T> implements Iterator<T> {
 		
@@ -323,7 +365,11 @@ public class LinkedList<T> implements List<T> {
 
 	}
 
-	
+	/*
+	 * This is the node struct we are maintaining
+	 * Containing the actual data and next element of the linked list
+	 * 
+	 */
 	private static class Node<T>{
 		T element;
 		Node<T> next;
